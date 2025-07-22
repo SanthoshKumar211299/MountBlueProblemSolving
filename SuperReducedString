@@ -1,0 +1,16 @@
+function superReducedString(s) {
+    const stack = [];
+
+    for (let char of s) {
+        if (stack.length && stack[stack.length - 1] === char) {
+            // Remove the last character if it matches the current one
+            stack.pop();
+        } else {
+            // Otherwise, add it to the stack
+            stack.push(char);
+        }
+    }
+
+    // Return reduced string or 'Empty String' if stack is empty
+    return stack.length ? stack.join('') : "Empty String";
+}
