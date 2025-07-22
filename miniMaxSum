@@ -1,0 +1,8 @@
+function miniMaxSum(arr) {
+    // Write your code here
+  let num1=[];
+  let num2=[];
+  for(let i =0;i<arr.length;i++){
+    
+}
+}
