@@ -1,0 +1,20 @@
+function getTotalX(a, b) {
+    let count = 0;
+
+    // x can only be between max of a and min of b
+    let start = Math.max(...a);
+    let end = Math.min(...b);
+
+    for (let x = start; x <= end; x++) {
+        // Check if x is divisible by all elements in a
+        let isFactorOfA = a.every(ai => x % ai === 0);
+        // Check if all elements in b are divisible by x
+        let isFactorOfB = b.every(bi => bi % x === 0);
+
+        if (isFactorOfA && isFactorOfB) {
+            count++;
+        }
+    }
+
+    return count;
+}
