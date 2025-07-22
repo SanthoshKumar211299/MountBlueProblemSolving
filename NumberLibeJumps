@@ -1,0 +1,14 @@
+function kangaroo(x1, v1, x2, v2) {
+    // Check if the kangaroo starting behind jumps farther
+    if (v1 === v2) {
+        // Same speed but different positions => never meet
+        return x1 === x2 ? "YES" : "NO";
+    }
+
+    // Check if they will land at same position at same time
+    if ((x2 - x1) % (v1 - v2) === 0 && (v1 > v2)) {
+        return "YES";
+    } else {
+        return "NO";
+    }
+}
