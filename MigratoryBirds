@@ -1,0 +1,19 @@
+function migratoryBirds(arr) {
+    let count = Array(6).fill(0); // Bird types are 1 to 5
+
+    for (let i = 0; i < arr.length; i++) {
+        count[arr[i]]++; // Count sightings for each type
+    }
+
+    let maxCount = 0;
+    let birdType = 0;
+
+    for (let i = 1; i <= 5; i++) {
+        if (count[i] > maxCount) {
+            maxCount = count[i];
+            birdType = i;
+        }
+    }
+
+    return birdType;
+}
