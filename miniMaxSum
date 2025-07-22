@@ -1,8 +1,12 @@
 function miniMaxSum(arr) {
-    // Write your code here
-  let num1=[];
-  let num2=[];
-  for(let i =0;i<arr.length;i++){
-    
-}
+    // Sort the array
+    arr.sort((a, b) => a - b);
+
+    // Sum first 4 elements for minSum
+    const minSum = arr.slice(0, 4).reduce((a, b) => a + b, 0);
+
+    // Sum last 4 elements for maxSum
+    const maxSum = arr.slice(1).reduce((a, b) => a + b, 0);
+
+    console.log(`${minSum} ${maxSum}`);
 }
