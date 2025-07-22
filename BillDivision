@@ -1,0 +1,16 @@
+function bonAppetit(bill, k, b) {
+    // Step 1: Remove the item Anna didn't eat
+    const totalWithoutAnnaItem = bill.reduce((sum, cost, index) => {
+        return index !== k ? sum + cost : sum;
+    }, 0);
+
+    // Step 2: Calculate what Anna should actually pay
+    const annaShare = totalWithoutAnnaItem / 2;
+
+    // Step 3: Compare it with what Brian charged her
+    if (b === annaShare) {
+        console.log("Bon Appetit");
+    } else {
+        console.log(b - annaShare);
+    }
+}
