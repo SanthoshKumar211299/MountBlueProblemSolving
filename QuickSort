@@ -1,0 +1,17 @@
+function quickSort(arr) {
+    // Write your code here
+    let pivot =arr[0];
+    let right =[];
+    let equal =[];
+    let left =[];
+    for(let i =0 ;i<arr.length;i++){
+        if(arr[i]<pivot){
+            left.push(arr[i])
+        }else if(arr[i]>pivot){
+            right.push(arr[i])
+        }else{
+            equal.push(arr[i])
+        }
+    }
+   return[...left,...equal,...right]
+}
