@@ -1,0 +1,19 @@
+function countingValleys(steps, path) {
+    let level = 0;     // current altitude
+    let valleys = 0;
+
+    for (let i = 0; i < steps; i++) {
+        const prevLevel = level;
+
+        // Update current level
+        if (path[i] === 'U') level++;
+        else if (path[i] === 'D') level--;
+
+        // Check if we just came UP to sea level from a valley
+        if (prevLevel < 0 && level === 0) {
+            valleys++;
+        }
+    }
+
+    return valleys;
+}
