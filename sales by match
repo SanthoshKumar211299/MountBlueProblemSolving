@@ -1,0 +1,20 @@
+function sockMerchant(n, ar) {
+    const colorCount = {};
+    let pairs = 0;
+
+    // Count socks by color
+    for (let color of ar) {
+        if (colorCount[color]) {
+            colorCount[color]++;
+        } else {
+            colorCount[color] = 1;
+        }
+    }
+
+    // Calculate pairs for each color
+    for (let color in colorCount) {
+        pairs += Math.floor(colorCount[color] / 2);
+    }
+
+    return pairs;
+}
