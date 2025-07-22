@@ -1,0 +1,19 @@
+function birthday(s, d, m) {
+    let count = 0;
+
+    for (let i = 0; i <= s.length - m; i++) {
+        let sum = 0;
+
+        // Sum the next 'm' elements starting from index 'i'
+        for (let j = i; j < i + m; j++) {
+            sum += s[j];
+        }
+
+        // If the sum equals Ron's birthday, count it
+        if (sum === d) {
+            count++;
+        }
+    }
+
+    return count;
+}
